@@ -6,7 +6,7 @@
   <body>   
     <script>
           async function init() {
-            const data = await d3.csv('/emissions.csv');
+            const data = await d3.csv('https://karlindye.github.io/emissions.csv');
 
             d3.select('body')
                 .selectAll('p')
