@@ -13,7 +13,7 @@ var svg = d3.select("#emissionViz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Create emissions viz
-d3.csv("https://karlindye.github.io/emissions.csv", function(data) {
+d3.csv("https://karlindye.github.io/emissions.csv").then(function(data) {
 
   // Add X axis
   var x = d3.scaleLinear()
