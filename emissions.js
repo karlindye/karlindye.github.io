@@ -1,6 +1,6 @@
 // Vars for viz sizing
 var margin = {top: 10, right: 30, bottom: 30, left: 30};
-var width = 460 - margin.left - margin.right;
+var width = 740 - margin.left - margin.right;
 var height = 400 - margin.top - margin.bottom;
 
 // Add svg
@@ -21,16 +21,16 @@ d3.csv("https://karlindye.github.io/emissions.csv").then(function(data) {
     .range([ 0, width ]);
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x));
+    .call(d3.axisBottom(x).tickFormat(d3.format("d")));
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, 22])
+    .domain([14, 23])
     .range([ height, 0]);
   svg.append("g")
     .call(d3.axisLeft(y));
 
-  // Add dots
+  // Add points
   svg.append('g')
     .selectAll("dot")
     .data(data)
@@ -38,6 +38,17 @@ d3.csv("https://karlindye.github.io/emissions.csv").then(function(data) {
     .append("circle")
       .attr("cx", function (d) { return x(d.Year); } )
       .attr("cy", function (d) { return y(d.co2Emissions); } )
-      .attr("r", 1.5)
+      .attr("r", 3)
       .style("fill", "#69b3a2")
+   
+   // Add lines
+   svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.Year) })
+        .y(function(d) { return y(d.co2Emissions) })
+        )
 });
