@@ -4,20 +4,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>   
-    <script>
-          async function init() {
-            const data = await d3.csv('https://karlindye.github.io/emissions.csv');
-
-            d3.select('body')
-                .selectAll('p')
-                .data(data)
-                .enter()
-                .append('p')
-                .html(function(d,i) { return 'year: ' + d.Year
-                    ' emmisions: ' + d.co2Emissions;});
-
-        }
-    </script>
+    <div id="emissionViz"></div>
+    <div id="vehicleViz"></div>
   </body>  
 </html>  
 
