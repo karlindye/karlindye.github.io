@@ -61,6 +61,72 @@
         font-family: 'Roboto', sans-serif;
       }
 
+      /* Legend Style ------------------------------ */
+
+      #legend div {
+        padding: 10px 16px;
+        margin-left: 5px;
+        margin-right: 5px;
+        float: left;
+      }
+
+      #keyEmissions {
+        background-color: #4CAF50;
+      }
+
+      #keyCars {
+        background-color: #3cd0e4;
+        cursor: pointer;
+      }
+
+      #keyTrucks {
+        background-color: #e62424;
+        cursor: pointer;
+      }
+
+      #legend p {
+        color: white;
+        margin: 0px;
+        font-size: 12px;
+      }
+
+      #legend {
+        display: inline-block;
+      }
+
+      .keyInActive {
+        opacity: 0.5;
+      }
+
+      .keyInActive:hover {
+        opacity: 0.8;
+      }
+
+      .keyActive {
+        opacity: 1;
+      }
+
+      .keyActive:hover {
+        opacity: 0.8;
+      }
+
+      #legendTitle {
+        display: inline-block;
+      }
+
+      #legendTitle h3 {
+        margin-bottom: 0px;
+        margin-left: 135px;
+        margin-right: 20px;
+      }
+
+      #legendTitle p {
+        font-size: 10px;
+        margin-bottom: 10px;
+        margin-left: 135px;
+        margin-top: 0px;
+      }
+
       /* Tool Tip Style ------------------------------ */  
       .overlay {
           fill: none;
@@ -114,6 +180,15 @@
     <div id="overview"></div> 
     <div id="emissionViz"></div>
     <div id="vehicleViz"></div>
+    <div id="legendTitle">
+      <h3>Legend</h3>
+      <p>Click to Toggle</p>
+    </div>
+    <div id="legend">
+      <div id="keyEmissions"><p>Emissions</p></div>
+      <div id="keyCars" class="keyInActive"><p>Avg Car MPG</p></div>
+      <div id="keyTrucks" class="keyInActive"><p>Avg Truck MPG</p></div>
+    </div>
     <div id="slideDetails">
       <div id ="slideOne" class="inactiveSlide">
         <h3>Corporate Average Fuel Economy (CAFE) Standards</h3>
