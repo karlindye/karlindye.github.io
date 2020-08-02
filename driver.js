@@ -182,14 +182,26 @@ $(document).ready(function(){
             var tooltipDate = tooltip.append("div")
                 .attr("class", "tooltip-date");
     
+            // Emissions section    
             var tooltipEmissions = tooltip.append("div");
 
             tooltipEmissions.append("span")
                 .attr("class", "tooltip-title")
                 .text("Emissions: ");
-    
+
             var tooltipEmissionsValue = tooltipEmissions.append("span")
-                .attr("class", "tooltip-emissions");    
+                .attr("class", "tooltip-emissions");
+                
+            // Car MPG section    
+            var tooltipCar = tooltip.append("div");
+
+            tooltipCar.append("span")
+                .attr("class", "tooltip-title")
+                .text("Car MPG: ");
+
+            var tooltipCarValue = tooltipCar.append("span")
+                .attr("class", "tooltip-car");      
+
 
             svg.append("rect")
                 .attr("class", "overlay")
@@ -212,6 +224,7 @@ $(document).ready(function(){
                     tooltip.attr("style", "left:" + (x(d.Year) + 64) + "px;top:" + (y(d.co2Emissions) + 90) + "px;");
                     tooltip.select(".tooltip-date").text(d.Year);
                     tooltip.select(".tooltip-emissions").text(d.co2Emissions);
+                    tooltip.select(".tooltip-car").text(d.carMpg);
                 }
 
             }    
