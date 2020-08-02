@@ -43,7 +43,7 @@ $(document).ready(function(){
     // START - Slide One Function  -----------------------------------------------------------------------
     function slideOne(){
         // Vars for viz sizing
-        var margin = {top: 30, right: 30, bottom: 50, left: 50};
+        var margin = {top: 30, right: 50, bottom: 50, left: 50};
         var width = 740 - margin.left - margin.right;
         var height = 450 - margin.top - margin.bottom;
 
@@ -140,7 +140,7 @@ $(document).ready(function(){
             svg.append("text")
                 .attr("class","inactiveCarMPG")
                 .attr("transform", "rotate(-90)")
-                .attr("y", width + 15)
+                .attr("y", width + 25)
                 .attr("x",0 - (height / 2))
                 .attr("dy", "1em")
                 .style("text-anchor", "middle")
@@ -250,7 +250,7 @@ $(document).ready(function(){
     // START - Slide Two Function  -----------------------------------------------------------------------
     function slideTwo(){
         // Vars for viz sizing
-        var margin = {top: 30, right: 30, bottom: 50, left: 50};
+        var margin = {top: 30, right: 50, bottom: 50, left: 50};
         var width = 740 - margin.left - margin.right;
         var height = 450 - margin.top - margin.bottom;
 
@@ -430,7 +430,7 @@ $(document).ready(function(){
     // START - Slide Three Function  -----------------------------------------------------------------------
     function slideThree(){
         // Vars for viz sizing
-        var margin = {top: 30, right: 30, bottom: 50, left: 50};
+        var margin = {top: 30, right: 50, bottom: 50, left: 50};
         var width = 740 - margin.left - margin.right;
         var height = 450 - margin.top - margin.bottom;
 
@@ -625,7 +625,7 @@ $(document).ready(function(){
     // START - Slide Four Function  -----------------------------------------------------------------------
     function slideFour(){
         // Vars for viz sizing
-        var margin = {top: 30, right: 30, bottom: 50, left: 50};
+        var margin = {top: 30, right: 50, bottom: 50, left: 50};
         var width = 740 - margin.left - margin.right;
         var height = 450 - margin.top - margin.bottom;
 
