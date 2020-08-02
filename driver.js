@@ -164,26 +164,6 @@ $(document).ready(function(){
 
             // START - Toggle for truck mpg -------------------------------------
 
-            // Add Y axis
-            var y1 = d3.scaleLinear()
-                .domain([11, 30])
-                .range([ height, 0]);
-
-            svg.append("g")
-                .attr("class","inactiveTruckMPG")
-                .attr("transform", "translate( " + width + ", 0 )")
-                .call(d3.axisRight(y1));
-
-            // Text label for the y axis
-            svg.append("text")
-                .attr("class","inactiveTruckMPG")
-                .attr("transform", "rotate(-90)")
-                .attr("y", width + 25)
-                .attr("x",0 - (height / 2))
-                .attr("dy", "1em")
-                .style("text-anchor", "middle")
-                .text("MPG (miles per gallon)"); 
-
             // Line for car mpg
             var pathTruck = svg.append("path")
                 .datum(data.filter(function(d) {return d.Year <= 1975;}))
