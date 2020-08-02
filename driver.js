@@ -10,7 +10,7 @@ $(document).ready(function(){
         $('svg').remove();
 
         // Call slide function
-        if ($(this).hasClass('naveItemOne')) {
+        if ($(this).is('#navItemOne')) {
             slideOne();
         }
 
