@@ -194,7 +194,7 @@ $(document).ready(function(){
         // FUEL VIZ ---------------------------------------------------------------------------------
         // Add svg
         var svg2 = d3.select("#vehicleViz")
-            .append("svg2")
+            .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -516,7 +516,7 @@ $(document).ready(function(){
         // FUEL VIZ ---------------------------------------------------------------------------------
         // Add svg
         var svg2 = d3.select("#vehicleViz")
-            .append("svg2")
+            .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -878,7 +878,7 @@ $(document).ready(function(){
         // FUEL VIZ ---------------------------------------------------------------------------------
         // Add svg
         var svg2 = d3.select("#vehicleViz")
-            .append("svg2")
+            .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
