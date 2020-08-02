@@ -137,7 +137,7 @@ $(document).ready(function(){
                 .call(d3.axisRight(y1));
 
             // Line for car mpg
-            var path = svg.append("path")
+            var pathCar = svg.append("path")
                 .datum(data.filter(function(d) {return d.Year <= 1975;}))
                 .attr("class","inactiveCarMPG")
                 .attr("fill", "none")
@@ -146,8 +146,10 @@ $(document).ready(function(){
                 .attr("d", d3.line()
                     .x(function(d) { return x(d.Year) })
                     .y(function(d) { return y1(d.carMPG) })
-                )   
-            
+                )
+
+            pathCar 
+                
             // END - Toggle for car mpg -------------------------------------    
 
             // Annotation for CAFE standards
