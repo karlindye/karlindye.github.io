@@ -164,21 +164,16 @@ $(document).ready(function(){
 
             // START - Toggle for truck mpg -------------------------------------
 
-            // Add Y axis
-            var y2 = d3.scaleLinear()
-                .domain([11, 30])
-                .range([ height, 0]);
-
-            // Line for car mpg
+            // Line for truck mpg
             var pathTruck = svg.append("path")
                 .datum(data.filter(function(d) {return d.Year <= 1975;}))
                 .attr("class","inactiveTruckMPG")
                 .attr("fill", "none")
-                .attr("stroke", "#d12e2e4")
+                .attr("stroke", "#e62424")
                 .attr("stroke-width", 2)
                 .attr("d", d3.line()
                     .x(function(d) { return x(d.Year) })
-                    .y(function(d) { return y2(d.truckMpg) })
+                    .y(function(d) { return y1(d.truckMpg) })
                 )
 
             pathTruck 
