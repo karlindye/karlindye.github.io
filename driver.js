@@ -139,9 +139,9 @@ $(document).ready(function(){
             // Text label for the y axis
             svg.append("text")
                 .attr("class","inactiveCarMPG")
-                .attr("transform", "rotate(90)")
-                .attr("y", width + margin.left)
-                .attr("x",(height / 2))
+                .attr("transform", "rotate(-90)")
+                .attr("y", width)
+                .attr("x",0 - (height / 2))
                 .attr("dy", "1em")
                 .style("text-anchor", "middle")
                 .text("MPG (miles per gallon)"); 
