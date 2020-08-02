@@ -508,6 +508,22 @@ $(document).ready(function(){
                 .on("mouseout", function() { focus.style("display", "none"); tooltip.style("display", "none"); })
                 .on("mousemove", mousemove);   
 
+            // Set year threshold
+            var yearTresh = 1975
+
+            if (slideNum == 1) {
+                yearTresh = 1975;
+            }   
+            if (slideNum == 2) {
+                yearTresh = 1986;
+            } 
+            if (slideNum == 3) {
+                yearTresh = 2007;
+            } 
+            if (slideNum == 4) {
+                yearTresh = 2016;
+            }  
+
             function mousemove() {
                 var x0 = x.invert(d3.mouse(this)[0]);
                 bisect = d3.bisector(function(a, b){ return a.Year - b; }).right;
@@ -516,7 +532,7 @@ $(document).ready(function(){
                 var d1 = data[i];
                 var d = x0 - d0.Year > d1.Year - x0 ? d1 : d0;
                 
-                if (d.Year <= 2018) {
+                if (d.Year <= yearTresh) {
                     focus.attr("transform", "translate(" + x(d.Year) + "," + y(d.co2Emissions) + ")");
                     tooltip.attr("style", "left:" + (x(d.Year) + 64) + "px;top:" + (y(d.co2Emissions) + 90) + "px;");
                     tooltip.select(".tooltip-date").text(d.Year);
