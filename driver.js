@@ -128,7 +128,7 @@ $(document).ready(function(){
 
             // Add Y axis
             var y1 = d3.scaleLinear()
-                .domain([5, 100])
+                .domain([11, 30])
                 .range([ height, 0]);
 
             svg.append("g")
@@ -145,12 +145,10 @@ $(document).ready(function(){
                 .attr("stroke-width", 2)
                 .attr("d", d3.line()
                     .x(function(d) { return x(d.Year) })
-                    .y(function(d) { return y1(d.carMPG) })
+                    .y(function(d) { return y1(d.carMpg) })
                 )
 
             pathCar 
-
-            console.log(data)
                 
             // END - Toggle for car mpg -------------------------------------    
 
