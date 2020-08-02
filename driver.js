@@ -162,6 +162,44 @@ $(document).ready(function(){
                 
             // END - Toggle for car mpg -------------------------------------    
 
+            // START - Toggle for truck mpg -------------------------------------
+
+            // Add Y axis
+            var y1 = d3.scaleLinear()
+                .domain([11, 30])
+                .range([ height, 0]);
+
+            svg.append("g")
+                .attr("class","inactiveTruckMPG")
+                .attr("transform", "translate( " + width + ", 0 )")
+                .call(d3.axisRight(y1));
+
+            // Text label for the y axis
+            svg.append("text")
+                .attr("class","inactiveTruckMPG")
+                .attr("transform", "rotate(-90)")
+                .attr("y", width + 25)
+                .attr("x",0 - (height / 2))
+                .attr("dy", "1em")
+                .style("text-anchor", "middle")
+                .text("MPG (miles per gallon)"); 
+
+            // Line for car mpg
+            var pathTruck = svg.append("path")
+                .datum(data.filter(function(d) {return d.Year <= 1975;}))
+                .attr("class","inactiveTruckMPG")
+                .attr("fill", "none")
+                .attr("stroke", "#d12e2e4")
+                .attr("stroke-width", 2)
+                .attr("d", d3.line()
+                    .x(function(d) { return x(d.Year) })
+                    .y(function(d) { return y1(d.truckMpg) })
+                )
+
+            pathTruck 
+                
+            // END - Toggle for truck mpg -------------------------------------                   
+
             // Annotation for CAFE standards
             svg.append("path")
                 .attr("fill", "none")
@@ -212,6 +250,15 @@ $(document).ready(function(){
             var tooltipCarValue = tooltipCar.append("span")
                 .attr("class", "tooltip-car");      
 
+            // Truck MPG section    
+            var tooltipTruck = tooltip.append("div");
+
+            tooltipTruck.append("span")
+                .attr("class", "tooltip-title")
+                .text("Truck MPG: ");
+
+            var tooltipTruckValue = tooltipTruck.append("span")
+                .attr("class", "tooltip-truck");                 
 
             svg.append("rect")
                 .attr("class", "overlay")
@@ -235,6 +282,7 @@ $(document).ready(function(){
                     tooltip.select(".tooltip-date").text(d.Year);
                     tooltip.select(".tooltip-emissions").text(d.co2Emissions);
                     tooltip.select(".tooltip-car").text(d.carMpg);
+                    tooltip.select(".tooltip-truck").text(d.truckMpg);
                 }
 
             }    
