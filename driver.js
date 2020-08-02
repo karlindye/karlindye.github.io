@@ -78,8 +78,8 @@ $(document).ready(function(){
              if(showCar == -1){
 
                 // Update button appearance
-                $('keyCars').removeClass('keyActive');
-                $('keyCars').addClass('keyInActive');
+                $('#keyCars').removeClass('keyActive');
+                $('#keyCars').addClass('keyInActive');
 
                 // Hide chart line
                 $('.carMPG').attr("display","none");
@@ -117,8 +117,8 @@ $(document).ready(function(){
              if(showTruck == -1){
 
                 // Update button appearance
-                $('keyCars').removeClass('keyActive');
-                $('keyCars').addClass('keyInActive');
+                $('#keyTrucks').removeClass('keyActive');
+                $('#keyTrucks').addClass('keyInActive');
 
                 // Hide chart line
                 $('.truckMPG').attr("display","none");
