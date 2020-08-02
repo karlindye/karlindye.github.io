@@ -133,7 +133,7 @@ $(document).ready(function(){
 
             svg.append("g")
                 .attr("class","inactiveCarMPG")
-                .call(d3.axisRight(y1));
+                .call(d3.svg.axis().scale(y1).orient("right"));
 
             // Line for car mpg
             var path = svg.append("path")
@@ -144,7 +144,7 @@ $(document).ready(function(){
                 .attr("stroke-width", 2)
                 .attr("d", d3.line()
                     .x(function(d) { return x(d.Year) })
-                    .y1(function(d) { return y(d.carMPG) })
+                    .y(function(d) { return y1(d.carMPG) })
                 )   
             
             // END - Toggle for car mpg -------------------------------------    
