@@ -135,7 +135,7 @@ $(document).ready(function(){
                 .attr("class", "tooltip-title")
                 .text("Likes: ");
     
-            var tooltipEmissionsValue = tooltipLikes.append("span")
+            var tooltipEmissionsValue = tooltipEmissions.append("span")
                 .attr("class", "tooltip-emissions");    
 
             svg.append("rect")
