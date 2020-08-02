@@ -147,21 +147,20 @@ $(document).ready(function(){
                 .on("mousemove", mousemove);   
 
             function mousemove() {
-                var x0 = x.invert(d3.mouse(this)[0])
+                var x0 = x.invert(d3.mouse(this)[0]);
                 bisect = d3.bisector(function(a, b){ return a.Year - b; }).right;
-                var i = bisect(data, x0)
-                //console.log(x0)
-                //console.log(i)
-                
-                var d0 = data[i - 1]
-                var d1 = data[i]
+                var i = bisect(data, x0);
+                var d0 = data[i - 1];
+                var d1 = data[i];
                 var d = x0 - d0.Year > d1.Year - x0 ? d1 : d0;
-                    
-                focus.attr("transform", "translate(" + x(d.Year) + "," + y(d.co2Emissions) + ")");
-                tooltip.attr("style", "left:" + (x(d.Year) + 64) + "px;top:" + (y(d.co2Emissions) + 80) + "px;");
-                tooltip.select(".tooltip-date").text(d.Year);
-                tooltip.select(".tooltip-emissions").text(d.co2Emissions);
                 
+                if (d.Year <= 1975) {
+                    focus.attr("transform", "translate(" + x(d.Year) + "," + y(d.co2Emissions) + ")");
+                    tooltip.attr("style", "left:" + (x(d.Year) + 64) + "px;top:" + (y(d.co2Emissions) + 90) + "px;");
+                    tooltip.select(".tooltip-date").text(d.Year);
+                    tooltip.select(".tooltip-emissions").text(d.co2Emissions);
+                }
+
             }    
 
         });
