@@ -103,7 +103,7 @@ $(document).ready(function(){
                 .style("text-anchor", "middle")
                 .text("CO2 Emissions (metric tons per capita)");     
 
-            // Line for chart
+            // Line for emissions
             var path = svg.append("path")
                 .datum(data.filter(function(d) {return d.Year <= 1975;}))
                 .attr("fill", "none")
@@ -113,9 +113,8 @@ $(document).ready(function(){
                     .x(function(d) { return x(d.Year) })
                     .y(function(d) { return y(d.co2Emissions) })
                 )
-        
 
-            // Animate line
+            // Animate emissions line
             var pathLength = path.node().getTotalLength();
 
             path.attr("stroke-dasharray", pathLength)
@@ -124,6 +123,31 @@ $(document).ready(function(){
                 .duration(4000) 
                 .ease(d3.easeSin) 
                 .attr("stroke-dashoffset", 0);
+
+            // START - Toggle for car mpg -------------------------------------
+
+            // Add Y axis
+            var y1 = d3.scaleLinear()
+                .domain([11, 30])
+                .range([ height, 0]);
+
+            svg.append("g")
+                .attr("class","inactiveCarMPG")
+                .call(d3.axisRight(y1));
+
+            // Line for car mpg
+            var path = svg.append("path")
+                .datum(data.filter(function(d) {return d.Year <= 1975;}))
+                .attr("class","inactiveCarMPG")
+                .attr("fill", "none")
+                .attr("stroke", "#3cd0e4")
+                .attr("stroke-width", 2)
+                .attr("d", d3.line()
+                    .x(function(d) { return x(d.Year) })
+                    .y1(function(d) { return y(d.carMPG) })
+                )   
+            
+            // END - Toggle for car mpg -------------------------------------    
 
             // Annotation for CAFE standards
             svg.append("path")
