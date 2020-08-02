@@ -136,6 +136,16 @@ $(document).ready(function(){
                 .attr("transform", "translate( " + width + ", 0 )")
                 .call(d3.axisRight(y1));
 
+            // Text label for the y axis
+            svg.append("text")
+                .attr("class","inactiveCarMPG")
+                .attr("transform", "rotate(90)")
+                .attr("y", width + margin.left)
+                .attr("x",(height / 2))
+                .attr("dy", "1em")
+                .style("text-anchor", "middle")
+                .text("MPG (miles per gallon)"); 
+
             // Line for car mpg
             var pathCar = svg.append("path")
                 .datum(data.filter(function(d) {return d.Year <= 1975;}))
