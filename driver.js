@@ -48,7 +48,89 @@ $(document).ready(function(){
             slide(slideNumber, showCar, showTruck);
         }
 
-    });    
+    });   
+    
+    // Legend button functionality
+    $('.legendKey').click(function(){
+
+        // Car functionality
+        if ($(this).is('#keyCars')){
+            
+            // Toggle car variable
+            showCar *= -1;
+
+            // If toggling on 
+            if(showCar == 1){
+
+                // Update button appearance
+                $('#keyCars').removeClass('keyInActive');
+                $('#keyCars').addClass('keyActive');
+
+                // Reveal chart line
+                $('.carMPG').attr("display",null);
+
+                // Reveal MPG axis
+                $('.axisMPG').attr("display",null);
+
+            }
+
+             // If toggling off 
+             if(showCar == -1){
+
+                // Update button appearance
+                $('keyCars').removeClass('keyActive');
+                $('keyCars').addClass('keyInActive');
+
+                // Hide chart line
+                $('.carMPG').attr("display","none");
+
+                // Hide MPG axis
+                if (showCar == -1 && showTruck == -1){
+                    $('.axisMPG').attr("display","none");
+                }
+
+            }
+        }
+
+        // Truck functionality
+        if ($(this).is('#keyTrucks')){
+            
+            // Toggle car variable
+            showTruck *= -1;
+
+            // If toggling on 
+            if(showTruck == 1){
+
+                // Update button appearance
+                $('#keyTrucks').removeClass('keyInActive');
+                $('#keyTrucks').addClass('keyActive');
+
+                // Reveal chart line
+                $('.truckMPG').attr("display",null);
+
+                // Reveal MPG axis
+                $('.axisMPG').attr("display",null);
+
+            }
+
+             // If toggling off 
+             if(showTruck == -1){
+
+                // Update button appearance
+                $('keyCars').removeClass('keyActive');
+                $('keyCars').addClass('keyInActive');
+
+                // Hide chart line
+                $('.truckMPG').attr("display","none");
+
+                // Hide MPG axis
+                if (showCar == -1 && showTruck == -1){
+                    $('.axisMPG').attr("display","none");
+                }
+
+            }
+        }
+    });
     
     // START - Slide Function  -----------------------------------------------------------------------
     function slide(slideNum, shwCar, shwTruck){
