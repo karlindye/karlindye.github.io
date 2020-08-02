@@ -133,7 +133,8 @@ $(document).ready(function(){
 
             svg.append("g")
                 .attr("class","inactiveCarMPG")
-                .call(d3.svg.axis().scale(y1).orient("right"));
+                .attr("transform", "translate( " + width + ", 0 )")
+                .call(d3.axisRight(y1));
 
             // Line for car mpg
             var path = svg.append("path")
