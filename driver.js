@@ -1,7 +1,7 @@
 $(document).ready(function(){
     // Initiate webpage with slide one
     $('#slideOne').removeClass('inactiveSlide');
-    $('navItemOne').addClass('active')
+    $('#navItemOne').addClass('active')
     slideOne();
 
     // Navigation functionality
