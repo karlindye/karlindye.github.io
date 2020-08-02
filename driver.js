@@ -20,7 +20,7 @@ $(document).ready(function(){
 
         if ($(this).is('#navItemTwo')) {
             $('#slideTwo').removeClass('inactiveSlide');
-            //slideOne();
+            slideTwo();
         }
 
     });    
