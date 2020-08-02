@@ -527,13 +527,13 @@ $(document).ready(function(){
             // Set whether to show car and truck
 
             if (shwCar == 1) {
-                $("carMPG").attr("display",null);
-                $("axisMPG").attr("display",null);
+                $(".carMPG").attr("display",null);
+                $(".axisMPG").attr("display",null);
             }
 
             if (shwTruck == 1) {
-                $("truckMPG").attr("display",null);
-                $("axisMPG").attr("display",null);
+                $(".truckMPG").attr("display",null);
+                $(".axisMPG").attr("display",null);
             }
      
             // Tool Tip
