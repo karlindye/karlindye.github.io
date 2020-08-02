@@ -9,9 +9,18 @@ $(document).ready(function(){
         // Remove current slide
         $('svg').remove();
 
+        // Set all slide details to not display
+        $('#slideDetails div').addClass('inactiveSlide'); 
+
         // Call slide function
         if ($(this).is('#navItemOne')) {
+            $('#slideOne').removeClass('inactiveSlide');
             slideOne();
+        }
+
+        if ($(this).is('#navItemTwo')) {
+            $('#slideTwo').removeClass('inactiveSlide');
+            //slideOne();
         }
 
     });    
@@ -41,7 +50,7 @@ $(document).ready(function(){
                 .attr("y", 0 - (margin.top / 2))
                 .attr("text-anchor", "middle")  
                 .style("font-size", "16px")  
-                .text("US CO2 Emissions Per Capita");
+                .text("United States CO2 Emissions Per Capita");
 
             // Add X axis
             var x = d3.scaleLinear()

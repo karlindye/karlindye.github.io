@@ -52,6 +52,10 @@
         background-color: #4CAF50;
       }
 
+      .inactiveSlide {
+        display: none;
+      }
+
       /* Chart Style ------------------------------ */
 
       svg text {
@@ -112,13 +116,19 @@
     <div id="emissionViz"></div>
     <div id="vehicleViz"></div>
     <div id="slideDetails">
-      <div id ="slideOne">
-        <h3 id="histEvent">Corporate Average Fuel Economy (CAFE) Standards</h3>
+      <div id ="slideOne" class="inactiveSlide">
+        <h3>Corporate Average Fuel Economy (CAFE) Standards</h3>
         <p>
           In response to the oil price shocks of the early 1970s, Congress passed the nation’s first Corporate Average Fuel Economy (CAFE)
           standards in 1975. The law called for a doubling of passenger-vehicle efficiency—to 27.5 miles per gallon (mpg)—within 10 years. The National 
           Highway Traffic Safety Administration (NHTSA) was also given the authority to set a separate standard for “light trucks,” which accounted for a fifth of
           new vehicle sales at the time.
+        </p>
+      </div>
+      <div id ="slideTwo" class="inactiveSlide">
+        <h3>Slide Two</h3>
+        <p>
+          Stuff Stuff Stuff Stuff Stuff Stuff
         </p>
       </div>
     </div> 
