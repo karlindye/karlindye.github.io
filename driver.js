@@ -41,7 +41,7 @@ $(document).ready(function(){
             .attr("y", 0 - (margin.top / 2))
             .attr("text-anchor", "middle")  
             .style("font-size", "16px") 
-            .style("text-decoration", "underline")  
+            //.style("text-decoration", "underline")  
             .text("US CO2 Emissions Per Capita");
 
             // Add X axis
@@ -78,24 +78,11 @@ $(document).ready(function(){
             .style("text-anchor", "middle")
             .text("CO2 Emissions (metric tons per capita)");     
 
-            var div = d3.select("body").append("div")
-            .attr("class", "tooltip-donut")
-            .attr("position", "absolute")
-            .attr("text-align", "center")
-            .attr("padding", ".5rem")
-            .attr("background", "#FFFFFF")
-            .attr("color", "#313639")
-            .attr("border", "1px solid #313639")
-            .attr("border-radius", "8px")
-            .attr("pointer-events", "none")
-            .attr("font-size", "1.3rem")
-            .style("opacity", 0);
-
             var path = svg.append("path")
             .datum(data.filter(function(d) {return d.Year <= 1975;}))
             .attr("fill", "none")
-            .attr("stroke", "steelblue")
-            .attr("stroke-width", 1.5)
+            .attr("stroke", "#4CAF50")
+            .attr("stroke-width", 2)
             .attr("d", d3.line()
                 .x(function(d) { return x(d.Year) })
                 .y(function(d) { return y(d.co2Emissions) })
@@ -124,7 +111,7 @@ $(document).ready(function(){
             .attr("y", 15)
             .attr("text-anchor", "left")  
             .style("font-size", "12px")
-            .style("fill","#546E7A") 
+            //.style("fill","#546E7A") 
             .text("CAFE Standards");
 
         });
