@@ -164,6 +164,11 @@ $(document).ready(function(){
 
             // START - Toggle for truck mpg -------------------------------------
 
+            // Add Y axis
+            var y2 = d3.scaleLinear()
+                .domain([11, 30])
+                .range([ height, 0]);
+
             // Line for car mpg
             var pathTruck = svg.append("path")
                 .datum(data.filter(function(d) {return d.Year <= 1975;}))
@@ -173,7 +178,7 @@ $(document).ready(function(){
                 .attr("stroke-width", 2)
                 .attr("d", d3.line()
                     .x(function(d) { return x(d.Year) })
-                    .y(function(d) { return y1(d.truckMpg) })
+                    .y(function(d) { return y2(d.truckMpg) })
                 )
 
             pathTruck 
