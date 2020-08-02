@@ -10,6 +10,11 @@
          background-color: whitesmoke;
          font-family: 'Roboto', sans-serif;
       }
+
+      .content {
+        max-width: 1000px;
+        margin: auto;
+      }
       
       /* Navigation Style ------------------------------ */
       
@@ -59,6 +64,11 @@
 
       svg text {
         font-family: 'Roboto', sans-serif;
+      }
+
+      #emissionViz {
+        max-width: 800px;
+        margin: auto;
       }
 
       /* Legend Style ------------------------------ */
@@ -116,14 +126,14 @@
 
       #legendTitle h3 {
         margin-bottom: 0px;
-        margin-left: 135px;
+        margin-left: 235px;
         margin-right: 20px;
       }
 
       #legendTitle p {
         font-size: 10px;
         margin-bottom: 10px;
-        margin-left: 135px;
+        margin-left: 235px;
         margin-top: 0px;
       }
 
@@ -140,6 +150,7 @@
       .tooltip {
           width: 120px;
           padding: 4px 10px;
+          margin: auto;
           border: 1px solid #aaa;
           border-radius: 4px;
           box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -165,77 +176,78 @@
      </style>
   </head>
   <body>
-    <div id="titleSection">
-      <h1>United States Vehicle Fuel Economy Standards and CO2 Emissions</h1>
-      <p>Since the mid 1970's the United States has enacted a series of fuel economy standards. During the same period per capita CO2 emissions have trended downward.</p>
-    </div> 
-    <div id="nav">
-      <ul>
-        <li><p class="navItem" id="navItemOne">One</p></li>
-        <li><p class="navItem" id="navItemTwo">Two</p></li>
-        <li><p class="navItem" id="navItemThree">Three</p></li>
-        <li><p class="navItem" id="navItemFour">Four</p></li>
-      </ul>
-    </div> 
-    <div id="overview"></div> 
-    <div id="emissionViz"></div>
-    <div id="vehicleViz"></div>
-    <div id="legendTitle">
-      <h3>Legend</h3>
-      <p>Click to Toggle</p>
+    <div class="content">
+      <div id="titleSection">
+        <h1>United States Vehicle Fuel Economy Standards and CO2 Emissions</h1>
+        <p>Since the mid 1970's the United States has enacted a series of fuel economy standards. During the same period per capita CO2 emissions have trended downward.</p>
+      </div> 
+      <div id="nav">
+        <ul>
+          <li><p class="navItem" id="navItemOne">One</p></li>
+          <li><p class="navItem" id="navItemTwo">Two</p></li>
+          <li><p class="navItem" id="navItemThree">Three</p></li>
+          <li><p class="navItem" id="navItemFour">Four</p></li>
+        </ul>
+      </div> 
+      <div id="overview"></div> 
+      <div id="emissionViz"></div>
+      <div id="vehicleViz"></div>
+      <div id="legendTitle">
+        <h3>Legend</h3>
+        <p>Click to Toggle</p>
+      </div>
+      <div id="legend">
+        <div id="keyEmissions"><p>Emissions</p></div>
+        <div id="keyCars" class="legendKey keyInActive"><p>Avg Car MPG</p></div>
+        <div id="keyTrucks" class="legendKey keyInActive"><p>Avg Truck MPG</p></div>
+      </div>
+      <div id="slideDetails">
+        <div id ="slideOne" class="inactiveSlide">
+          <h3>Corporate Average Fuel Economy (CAFE) Standards</h3>
+          <p>
+            In response to the oil price shocks of the early 1970s, Congress passed the nation’s first Corporate Average Fuel Economy (CAFE)
+            standards in 1975. The law called for a doubling of passenger-vehicle efficiency—to 27.5 miles per gallon (mpg)—within 10 years. The National 
+            Highway Traffic Safety Administration (NHTSA) was also given the authority to set a separate standard for “light trucks,” which accounted for a fifth of
+            new vehicle sales at the time.
+          </p>
+        </div>
+        <div id ="slideTwo" class="inactiveSlide">
+          <h3>Reagan Administration Lowers and Freezes Fuel Economy Standards</h3>
+          <p>
+            Between 1975 and 1985, average mileage per gallon increased signficantly for passenger-vehicles and light trucks. 
+            In the mid-1980s, however, Ford and General Motors lobbied the Reagan administration to lower the standard. NHTSA complied, setting a
+            26-mpg standard for 1986, prompting Chrysler Chairman Lee Iacocca to declare, “We are about to put up a tombstone: ‘Here lies America’s
+            energy policy.’"  
+          </p>
+        </div>
+        <div id ="slideThree" class="inactiveSlide">
+          <h3>Energy Independence and Security Act (EISA) Increases Standards</h3>
+          <p>
+            In December 2007, Congress passed the first changes to U.S. fuel-economy standards in nearly 20 years. A part of the larger Energy
+            Independence and Security Act (EISA) of 2007, the provision raised CAFE standards for cars, SUVs and pickups by about 40 percent—to 35 mpg by 2020.  
+          </p>
+        </div>
+        <div id ="slideFour" class="inactiveSlide">
+          <h3>Obama Administration Accelerates Standards</h3>
+          <p>
+            In April 2009, President Barack Obama accelerated the increase in the previous administration’s CAFE
+            standards. The joint Environmental Protection Agency/NHTSA rule applies to model years
+            2012 to 2016, requiring a fleet-wide average of 35.5 mpg by 2016. Increasing at an average of 
+            5 percent annually, most passenger cars must achieve 39 mpg, and light trucks 30 mpg, by 2016.
+            Accompanying this announcement was a memo expressing the intent to create emissions
+            standards for medium- and heavy-duty trucks, as required by the 2007 EISA 
+          </p>
+          <p>
+            In October 2010, the administration proposed a CAFE standard for medium- and heavy-duty
+            trucks. The program is projected to save 500 million barrels of oil and 250 million metric tons
+            of carbon dioxide emissions in the first five years. Covered vehicles would be separated by type
+            and fuel, with fuel-economy improvements of 20 percent for combination tractors, 10 percent for
+            gasoline trucks and vans, and 10 percent for diesel trucks and vans and all vocational vehicles (such as
+            dump trucks and cement mixers) by model year 2018.
+          </p>
+        </div>
+      </div> 
     </div>
-    <div id="legend">
-      <div id="keyEmissions"><p>Emissions</p></div>
-      <div id="keyCars" class="legendKey keyInActive"><p>Avg Car MPG</p></div>
-      <div id="keyTrucks" class="legendKey keyInActive"><p>Avg Truck MPG</p></div>
-    </div>
-    <div id="slideDetails">
-      <div id ="slideOne" class="inactiveSlide">
-        <h3>Corporate Average Fuel Economy (CAFE) Standards</h3>
-        <p>
-          In response to the oil price shocks of the early 1970s, Congress passed the nation’s first Corporate Average Fuel Economy (CAFE)
-          standards in 1975. The law called for a doubling of passenger-vehicle efficiency—to 27.5 miles per gallon (mpg)—within 10 years. The National 
-          Highway Traffic Safety Administration (NHTSA) was also given the authority to set a separate standard for “light trucks,” which accounted for a fifth of
-          new vehicle sales at the time.
-        </p>
-      </div>
-      <div id ="slideTwo" class="inactiveSlide">
-        <h3>Reagan Administration Lowers and Freezes Fuel Economy Standards</h3>
-        <p>
-          Between 1975 and 1985, average mileage per gallon increased signficantly for passenger-vehicles and light trucks. 
-          In the mid-1980s, however, Ford and General Motors lobbied the Reagan administration to lower the standard. NHTSA complied, setting a
-          26-mpg standard for 1986, prompting Chrysler Chairman Lee Iacocca to declare, “We are about to put up a tombstone: ‘Here lies America’s
-          energy policy.’"  
-        </p>
-      </div>
-      <div id ="slideThree" class="inactiveSlide">
-        <h3>Energy Independence and Security Act (EISA) Increases Standards</h3>
-        <p>
-          In December 2007, Congress passed the first changes to U.S. fuel-economy standards in nearly 20 years. A part of the larger Energy
-          Independence and Security Act (EISA) of 2007, the provision raised CAFE standards for cars, SUVs and pickups by about 40 percent—to 35 mpg by 2020.  
-        </p>
-      </div>
-      <div id ="slideFour" class="inactiveSlide">
-        <h3>Obama Administration Accelerates Standards</h3>
-        <p>
-          In April 2009, President Barack Obama accelerated the increase in the previous administration’s CAFE
-          standards. The joint Environmental Protection Agency/NHTSA rule applies to model years
-          2012 to 2016, requiring a fleet-wide average of 35.5 mpg by 2016. Increasing at an average of 
-          5 percent annually, most passenger cars must achieve 39 mpg, and light trucks 30 mpg, by 2016.
-          Accompanying this announcement was a memo expressing the intent to create emissions
-          standards for medium- and heavy-duty trucks, as required by the 2007 EISA 
-        </p>
-        <p>
-          In October 2010, the administration proposed a CAFE standard for medium- and heavy-duty
-          trucks. The program is projected to save 500 million barrels of oil and 250 million metric tons
-          of carbon dioxide emissions in the first five years. Covered vehicles would be separated by type
-          and fuel, with fuel-economy improvements of 20 percent for combination tractors, 10 percent for
-          gasoline trucks and vans, and 10 percent for diesel trucks and vans and all vocational vehicles (such as
-          dump trucks and cement mixers) by model year 2018.
-        </p>
-      </div>
-    </div> 
-    
   </body>  
 </html>  
 

@@ -614,9 +614,16 @@ $(document).ready(function(){
                 var d1 = data[i];
                 var d = x0 - d0.Year > d1.Year - x0 ? d1 : d0;
                 
+                var winWidth = $(window).width(); 
+                var winOffset = 0;
+                
+                if(winWidth > 1000){
+                    winOffset = (winWidth - 1000) / 2;  
+                }
+
                 if (d.Year <= yearTresh) {
                     focus.attr("transform", "translate(" + x(d.Year) + "," + y(d.co2Emissions) + ")");
-                    tooltip.attr("style", "left:" + (x(d.Year) + 64) + "px;top:" + (y(d.co2Emissions) + 90) + "px;");
+                    tooltip.attr("style", "left:" + (x(d.Year) + winOffset + 64) + "px;top:" + (y(d.co2Emissions) + 90) + "px;");
                     tooltip.select(".tooltip-date").text(d.Year);
                     tooltip.select(".tooltip-emissions").text(d.co2Emissions);
                     tooltip.select(".tooltip-car").text(d.carMpg);
