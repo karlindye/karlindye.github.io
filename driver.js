@@ -133,7 +133,7 @@ $(document).ready(function(){
 
             tooltipEmissions.append("span")
                 .attr("class", "tooltip-title")
-                .text("Likes: ");
+                .text("Emissions: ");
     
             var tooltipEmissionsValue = tooltipEmissions.append("span")
                 .attr("class", "tooltip-emissions");    
@@ -148,7 +148,10 @@ $(document).ready(function(){
 
             function mousemove() {
                 var x0 = x.invert(d3.mouse(this)[0])
+                bisect = d3.bisector(function(a, b){ return a.Year - b; }).right;
+                i = bisect(data, x0)
                 console.log(x0)
+                console.log(i)
                 /*
                 ,
                     i = bisectDate(data, x0, 1),
