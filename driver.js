@@ -1278,12 +1278,12 @@ $(document).ready(function(){
                 .domain([1960, 2016])
                 .range([ 0, width ]);
 
-            svg.append("g")
+            svg2.append("g")
                 .attr("transform", "translate(0," + height + ")")
                 .call(d3.axisBottom(x).tickFormat(d3.format("d")));
 
             // text label for the x axis
-            svg.append("text")             
+            svg2.append("text")             
                 .attr("transform",
                 "translate(" + (width/2) + " ," + 
                             (height + margin.top + 15) + ")")
@@ -1295,11 +1295,11 @@ $(document).ready(function(){
                 .domain([14, 23])
                 .range([ height, 0]);
 
-            svg.append("g")
+            svg2.append("g")
                 .call(d3.axisLeft(y));
 
             // Text label for the y axis
-            svg.append("text")
+            svg2.append("text")
                 .attr("transform", "rotate(-90)")
                 .attr("y", 0 - margin.left)
                 .attr("x",0 - (height / 2))
@@ -1308,7 +1308,7 @@ $(document).ready(function(){
                 .text("MPG (miles per gallon)");     
 
             // Line for chart slide one
-            var pathOne = svg.append("path")
+            var pathOne = svg2.append("path")
                 .datum(data.filter(function(d) {return d.Year <= 2007;}))
                 .attr("fill", "none")
                 .attr("stroke", "#4CAF50")
@@ -1320,7 +1320,7 @@ $(document).ready(function(){
         
             pathOne
 
-            var path = svg.append("path")
+            var path = svg2.append("path")
                 .datum(data.filter(function(d) {return d.Year >= 2007;}))
                 .attr("fill", "none")
                 .attr("stroke", "#4CAF50")
@@ -1341,14 +1341,14 @@ $(document).ready(function(){
                 .attr("stroke-dashoffset", 0);
 
             // Annotation for CAFE standards
-            svg.append("path")
+            svg2.append("path")
                 .attr("fill", "none")
                 .attr("stroke", "black")
                 .attr("stroke-dasharray", "5,5")
                 .attr("stroke-width", 1.5)
                 .attr("d", "M" + (x(1975)).toString() + " " + (height).toString() + "," + (x(1975)).toString() + " " + (0).toString() )
 
-            svg.append("text")
+            svg2.append("text")
                 .attr("x", x(1975) + 4)             
                 .attr("y", 15)
                 .attr("text-anchor", "left")  
@@ -1356,14 +1356,14 @@ $(document).ready(function(){
                 .text("CAFE Standards");
 
             // Annotation for Reagan freeze
-            svg.append("path")
+            svg2.append("path")
                 .attr("fill", "none")
                 .attr("stroke", "black")
                 .attr("stroke-dasharray", "5,5")
                 .attr("stroke-width", 1.5)
                 .attr("d", "M" + (x(1986)).toString() + " " + (height).toString() + "," + (x(1986)).toString() + " " + (0).toString() )
 
-            svg.append("text")
+            svg2.append("text")
                 .attr("x", x(1986) + 4)             
                 .attr("y", 15)
                 .attr("text-anchor", "left")  
@@ -1371,14 +1371,14 @@ $(document).ready(function(){
                 .text("Reagan Freeze");  
                 
             // Annotation for EISA standards
-            svg.append("path")
+            svg2.append("path")
                 .attr("fill", "none")
                 .attr("stroke", "black")
                 .attr("stroke-dasharray", "5,5")
                 .attr("stroke-width", 1.5)
                 .attr("d", "M" + (x(2007)).toString() + " " + (height).toString() + "," + (x(2007)).toString() + " " + (0).toString() )
 
-            svg.append("text")
+            svg2.append("text")
                 .attr("x", x(2007) + 4)             
                 .attr("y", 15)
                 .attr("text-anchor", "left")  
@@ -1390,7 +1390,7 @@ $(document).ready(function(){
                 .attr("class", "tooltip")
                 .style("display", "none");    
 
-            var focus = svg.append("g")
+            var focus = svg2.append("g")
                 .attr("class", "focus")
                 .style("display", "none");
 
@@ -1409,7 +1409,7 @@ $(document).ready(function(){
             var tooltipEmissionsValue = tooltipEmissions.append("span")
                 .attr("class", "tooltip-emissions");    
 
-            svg.append("rect")
+            svg2.append("rect")
                 .attr("class", "overlay")
                 .attr("width", width)
                 .attr("height", height)
