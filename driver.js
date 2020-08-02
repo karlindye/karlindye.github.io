@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    // Initiate webpage with slide one
+    $('#slideOne').removeClass('inactiveSlide');
+    slideOne();
+
     // Navigation functionality
     $('.navItem').click(function(){
 
