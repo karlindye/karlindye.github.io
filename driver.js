@@ -114,6 +114,55 @@ $(document).ready(function(){
                 .style("font-size", "12px")
                 .text("CAFE Standards");
 
+            // Tool Tip
+            var tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("display", "none");    
+
+            var focus = svg.append("g")
+                .attr("class", "focus")
+                .style("display", "none");
+    
+            focus.append("circle")
+                .attr("r", 5);
+    
+            var tooltipDate = tooltip.append("div")
+                .attr("class", "tooltip-date");
+    
+            var tooltipEmissions = tooltip.append("div");
+
+            tooltipEmissions.append("span")
+                .attr("class", "tooltip-title")
+                .text("Likes: ");
+    
+            var tooltipEmissionsValue = tooltipLikes.append("span")
+                .attr("class", "tooltip-emissions");    
+
+            svg.append("rect")
+                .attr("class", "overlay")
+                .attr("width", width)
+                .attr("height", height)
+                .on("mouseover", function() { focus.style("display", null); tooltip.style("display", null);  })
+                .on("mouseout", function() { focus.style("display", "none"); tooltip.style("display", "none"); })
+                .on("mousemove", mousemove);   
+
+            function mousemove() {
+                var x0 = x.invert(d3.mouse(this)[0])
+                console.log(x0)
+                /*
+                ,
+                    i = bisectDate(data, x0, 1),
+                    d0 = data[i - 1],
+                    d1 = data[i],
+                    d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+                    
+                focus.attr("transform", "translate(" + x(d.Year) + "," + y(d.co2Emissions) + ")");
+                tooltip.attr("style", "left:" + (x(d.Year) + 64) + "px;top:" + y(d.co2Emissions) + "px;");
+                tooltip.select(".tooltip-date").text(d.Year);
+                tooltip.select(".tooltip-emissions").text(d.co2Emissions);
+                */
+            }    
+
         });
     }
 
